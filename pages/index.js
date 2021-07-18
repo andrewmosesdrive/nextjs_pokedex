@@ -1,9 +1,9 @@
-import PokeCardDesktop from "../components/PokeCardDesktop";
+import PokeCardContainer from "../components/PokeCardContainer";
 
 export default function Home() {
   return(
     <div>
-      <PokeCardDesktop/>
+      <PokeCardContainer/>
     </div>
   )
 }
