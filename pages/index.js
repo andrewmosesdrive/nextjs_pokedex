@@ -1,9 +1,9 @@
-
+import PokeCardContainer from "../components/PokeCardContainer";
 
 export default function Home() {
-  return (
+  return(
     <div>
-      yeet
+      <PokeCardContainer/>
     </div>
   )
 }
