@@ -5,7 +5,7 @@ import { useQuery, gql } from "@apollo/client";
 
 const GET_POKEMANS = gql`
   query samplePokeAPIquery {
-    pokemon_v2_pokemon(order_by: { id: asc }) {
+    pokemon_v2_pokemon(order_by: { id: asc }, limit: 151) {
       id
       name
       pokemon_v2_pokemontypes {
@@ -38,7 +38,7 @@ const types = [
   "shadow",
 ];
 
-function PokeCardDesktop() {
+function PokeCardContainer() {
   const { loading, error, data } = useQuery(GET_POKEMANS);
 
   return (
@@ -53,6 +53,7 @@ function PokeCardDesktop() {
           return (
             <>
               <CardBody
+                key={pokemon.id}
                 id={pokemon.id}
                 name={pokemon.name}
                 types={typesArray}
@@ -64,4 +65,4 @@ function PokeCardDesktop() {
   );
 }
 
-export default PokeCardDesktop;
+export default PokeCardContainer;
